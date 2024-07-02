@@ -5,6 +5,7 @@ import ModeToggle from "../modeToggle/ModeToggle";
 import Logo from "./logo/Logo";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import { playfairDisplay } from "@/app/layout";
 
 const Navbar = () => {
   return (
@@ -12,7 +13,9 @@ const Navbar = () => {
       <MaxWidthWrapper className="flex items-center justify-between">
         <Logo />
 
-        <div className="hidden items-center justify-center gap-10 lg:flex">
+        <div
+          className={`${playfairDisplay.className} hidden items-center justify-center gap-10 lg:flex`}
+        >
           <Link href="">Home</Link>
           <Link href="">About Us</Link>
           <Link href="">Our Services</Link>
@@ -23,7 +26,9 @@ const Navbar = () => {
         <div className="flex items-center justify-center gap-3">
           <MenuButton />
 
-          <Button className="hidden lg:block">Contact Us</Button>
+          <Button className="hidden h-[40px] w-[150px] lg:block">
+            Contact Us
+          </Button>
 
           <ModeToggle />
         </div>

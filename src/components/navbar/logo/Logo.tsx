@@ -6,7 +6,7 @@ import darkLogo from "../../../../public/logo-dark.png";
 import lightLogo from "../../../../public/logo-white.png";
 import { useTheme } from "next-themes";
 
-const Logo = () => {
+const Logo = ({ classes }: { classes?: string }) => {
   const { resolvedTheme } = useTheme();
   const [src, setSrc] = useState(lightLogo);
 
@@ -14,7 +14,15 @@ const Logo = () => {
     resolvedTheme === "light" ? setSrc(lightLogo) : setSrc(darkLogo);
   }, [resolvedTheme]);
 
-  return <Image src={src} height={150} width={150} alt="logo" />;
+  return (
+    <Image
+      src={src}
+      height={150}
+      width={150}
+      alt="logo"
+      className={`${classes}`}
+    />
+  );
 };
 
 export default Logo;
