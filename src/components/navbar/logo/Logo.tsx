@@ -20,7 +20,7 @@ const Logo = ({ classes }: { classes?: string }) => {
       height={150}
       width={150}
       alt="logo"
-      className={`${classes}`}
+      className={`${classes} -ml-2`}
     />
   );
 };

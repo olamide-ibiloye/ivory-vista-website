@@ -7,7 +7,6 @@ export default function Home() {
     <main>
       <MaxWidthWrapper>
         <Hero />
-
         <AboutUs />
       </MaxWidthWrapper>
     </main>

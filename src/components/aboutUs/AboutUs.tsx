@@ -4,12 +4,14 @@ import React from "react";
 const AboutUs = () => {
   return (
     <section>
-      <div className="flex flex-col items-center justify-center">
-        <h1 className={`text-5xl font-semibold ${playfairDisplay.className}`}>
+      <div className="flex min-h-[500px] flex-col items-center justify-center py-20">
+        <h1
+          className={`text-3xl font-semibold md:text-5xl ${playfairDisplay.className}`}
+        >
           About Us
         </h1>
 
-        <p className="py-5 text-center">
+        <p className="py-10 text-center">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
@@ -20,6 +22,17 @@ const AboutUs = () => {
           more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum.
         </p>
+
+        <div className="flex grid-cols-3 flex-col items-center justify-center gap-4 md:grid">
+          {Array.from({ length: 6 }).map((_, idx) => (
+            <div
+              key={idx}
+              className={`h-[200px] w-[350px] rounded-xl ${idx % 2 === 0 ? "bg-orange-400" : "bg-orange-600"}`}
+            >
+              {idx}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -30,7 +30,7 @@ const Footer = () => {
           <div
             className={`${playfairDisplay.className} relative z-10 flex w-full flex-col items-start justify-start md:flex-row`}
           >
-            <div className="flex w-[40%] flex-col items-start justify-start">
+            <div className="flex flex-col items-start justify-start md:w-[40%]">
               <Logo classes="-my-5" />
 
               <div className="flex flex-col items-start justify-start gap-2">
@@ -51,7 +51,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="mt-8 flex w-[60%] flex-col items-start justify-center gap-10 md:flex-row">
+            <div className="mt-20 flex flex-col items-start justify-center gap-10 md:w-[60%] md:flex-row">
               <div className="flex flex-col items-start justify-start gap-2">
                 <h4 className="font-semibold">QUICK LINKS</h4>
 
@@ -76,8 +76,8 @@ const Footer = () => {
             </div>
           </div>
 
-          <p className="relative mt-16 text-[12px]">
-            Copyright @ 2024 Lugar Inc.
+          <p className="relative mt-10 py-5 text-[12px]">
+            Copyright @ 2024 Ivory Vista LLC.
           </p>
         </div>
       </MaxWidthWrapper>
