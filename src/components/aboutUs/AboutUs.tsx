@@ -1,5 +1,12 @@
 import { playfairDisplay } from "@/app/layout";
+import Image from "next/image";
 import React from "react";
+import { ArrowRightIcon } from "@radix-ui/react-icons";
+import interior1 from "../../../public/Interior 1.jpg";
+import interior2 from "../../../public/Interior 2.jpg";
+import interior3 from "../../../public/Interior 3.jpg";
+import interior4 from "../../../public/Interior 4.jpg";
+import interior5 from "../../../public/Interior 5.jpg";
 
 const AboutUs = () => {
   return (
@@ -23,15 +30,60 @@ const AboutUs = () => {
           including versions of Lorem Ipsum.
         </p>
 
-        <div className="flex grid-cols-3 flex-col items-center justify-center gap-4 md:grid">
-          {Array.from({ length: 6 }).map((_, idx) => (
-            <div
-              key={idx}
-              className={`h-[200px] w-[350px] rounded-xl ${idx % 2 === 0 ? "bg-orange-400" : "bg-orange-600"}`}
-            >
-              {idx}
+        <div className="my-5 flex w-full flex-col items-center justify-center gap-3 md:flex-row">
+          <div className="h-full w-full md:w-[30%]">
+            <Image
+              src={interior1}
+              alt=""
+              className="h-[512px] w-full rounded-lg object-cover"
+            />
+          </div>
+
+          <div className="flex h-full w-full flex-col items-center justify-center gap-3 md:w-[35%]">
+            <div className="relative w-full">
+              <div className="absolute inset-0 z-50 flex flex-col items-center justify-center">
+                <p className={`${playfairDisplay.className} text-xl`}>
+                  Read more
+                </p>
+
+                <div className="cursor-pointer rounded-full bg-primary p-5">
+                  <ArrowRightIcon className="h-6 w-6" />
+                </div>
+              </div>
+
+              <div className="absolute inset-0 bg-[#0D0A0A] opacity-60" />
+
+              <Image
+                src={interior2}
+                alt=""
+                className="h-[250px] w-full rounded-lg object-cover"
+              />
             </div>
-          ))}
+            <div className="w-full">
+              <Image
+                src={interior3}
+                alt=""
+                className="h-[250px] w-full rounded-lg object-cover"
+              />
+            </div>
+          </div>
+
+          <div className="flex h-full w-full flex-col items-center justify-center gap-3 md:w-[35%]">
+            <div className="w-full">
+              <Image
+                src={interior4}
+                alt=""
+                className="h-[250px] w-full rounded-lg object-cover"
+              />
+            </div>
+            <div className="w-full">
+              <Image
+                src={interior5}
+                alt=""
+                className="h-[250px] w-full rounded-lg object-cover"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
