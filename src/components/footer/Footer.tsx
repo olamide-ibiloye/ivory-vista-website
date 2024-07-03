@@ -25,7 +25,7 @@ const Footer = () => {
             backgroundSize: "contain",
           }}
         >
-          <div className="absolute inset-0 bg-white opacity-95 dark:bg-[#0D0A0A] dark:opacity-80"></div>
+          <div className="absolute inset-0 bg-background opacity-90"></div>
 
           <div
             className={`${playfairDisplay.className} relative z-10 flex w-full flex-col items-start justify-start md:flex-row`}

@@ -7,18 +7,15 @@ import interior2 from "../../../public/Interior 2.jpg";
 import interior3 from "../../../public/Interior 3.jpg";
 import interior4 from "../../../public/Interior 4.jpg";
 import interior5 from "../../../public/Interior 5.jpg";
+import Header from "../text/Header";
 
 const AboutUs = () => {
   return (
     <section>
       <div className="flex min-h-[500px] flex-col items-center justify-center py-20">
-        <h1
-          className={`text-3xl font-semibold md:text-5xl ${playfairDisplay.className}`}
-        >
-          About Us
-        </h1>
+        <Header title="About Us" />
 
-        <p className="py-10 text-center">
+        <p className="py-10 text-center lg:w-[90%]">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
@@ -42,16 +39,18 @@ const AboutUs = () => {
           <div className="flex h-full w-full flex-col items-center justify-center gap-3 md:w-[35%]">
             <div className="relative w-full">
               <div className="absolute inset-0 z-50 flex flex-col items-center justify-center">
-                <p className={`${playfairDisplay.className} text-xl`}>
+                <p
+                  className={`${playfairDisplay.className} text-xl text-white`}
+                >
                   Read more
                 </p>
 
                 <div className="cursor-pointer rounded-full bg-primary p-5">
-                  <ArrowRightIcon className="h-6 w-6" />
+                  <ArrowRightIcon className="h-6 w-6 text-white" />
                 </div>
               </div>
 
-              <div className="absolute inset-0 bg-[#0D0A0A] opacity-60" />
+              <div className="absolute inset-0 rounded-lg bg-[#0D0A0A] opacity-60" />
 
               <Image
                 src={interior2}
@@ -59,6 +58,7 @@ const AboutUs = () => {
                 className="h-[250px] w-full rounded-lg object-cover"
               />
             </div>
+
             <div className="w-full">
               <Image
                 src={interior3}
