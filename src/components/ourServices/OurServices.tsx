@@ -9,7 +9,7 @@ const OurServices = () => {
     return (
       <div className="rounded-lg bg-foreground p-5 text-background">
         <h3
-          className={`mb-3 text-2xl font-medium ${playfairDisplay.className}`}
+          className={`mb-3 text-xl font-medium md:text-2xl ${playfairDisplay.className}`}
         >
           {title}
         </h3>
@@ -21,16 +21,16 @@ const OurServices = () => {
 
   return (
     <section>
-      <div className="min-h-[500px] py-20">
-        <Header title="Our Services" />
+      <div className="min-h-[500px] py-10">
+        <Header title="Our Services" classes="text-center md:text-left" />
 
         <div className="md;gap-5 flex flex-col items-center justify-center gap-10 py-10 md:flex-row">
           <div className="hidden max-md:block">
             <Image
               src={service1}
               alt=""
-              width={350}
-              height={350}
+              width={250}
+              height={250}
               className="rounded-full"
             />
           </div>
