@@ -4,6 +4,7 @@ import Image from "next/image";
 import projects1 from "../../../public/Projects 1.jpg";
 import projects2 from "../../../public/Projects 2.jpg";
 import { playfairDisplay } from "@/app/layout";
+import MaxWidthWrapper from "../maxWidthWrapper/MaxWidthWrapper";
 
 const Projects = () => {
   const ProjectCard = ({
@@ -47,39 +48,41 @@ const Projects = () => {
 
   return (
     <section>
-      <div className="ivory-section">
-        <Header title="Projects" />
+      <MaxWidthWrapper>
+        <div className="ivory-section">
+          <Header title="Projects" />
 
-        <p className="py-10 text-center lg:w-[90%]">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
-        </p>
+          <p className="py-10 text-center lg:w-[90%]">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
 
-        <div className="flex flex-col items-center justify-center gap-4">
-          <ProjectCard
-            image={projects1}
-            title="Interior Design"
-            body="Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+          <div className="flex flex-col items-center justify-center gap-4">
+            <ProjectCard
+              image={projects1}
+              title="Interior Design"
+              body="Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet sint. Velit officia consequat duis enim velit mollit.
                 Exercitation veniam consequat sunt nostrud amet. Amet minim
                 mollit non deserunt ullamco est sit aliqua dolor do amet sint.
                 Velit officia consequat duis enim velit mollit..."
-          />
+            />
 
-          <ProjectCard
-            image={projects2}
-            title="Interior Design"
-            body="Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+            <ProjectCard
+              image={projects2}
+              title="Interior Design"
+              body="Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet sint. Velit officia consequat duis enim velit mollit.
                 Exercitation veniam consequat sunt nostrud amet. Amet minim
                 mollit non deserunt ullamco est sit aliqua dolor do amet sint.
                 Velit officia consequat duis enim velit mollit..."
-            reverse
-          />
+              reverse
+            />
+          </div>
         </div>
-      </div>
+      </MaxWidthWrapper>
     </section>
   );
 };
