@@ -51,7 +51,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="mt-20 flex flex-col items-start justify-center gap-10 md:w-[60%] md:flex-row">
+            <div className="mt-10 flex flex-col items-start justify-center gap-10 md:mt-20 md:w-[60%] md:flex-row">
               <div className="flex flex-col items-start justify-start gap-2">
                 <h4 className="font-semibold">QUICK LINKS</h4>
 
