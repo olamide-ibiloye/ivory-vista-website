@@ -17,7 +17,7 @@ const Hero = () => {
             <IvoryCarousel slides={slides} />
           </div>
 
-          <div className="relative z-10 -mt-10 text-center md:left-[10%] md:mt-0 md:text-left">
+          <div className="relative z-10 mt-10 text-center md:left-[10%] md:mt-0 md:text-left">
             <h1
               className={`text-5xl font-semibold md:text-7xl ${playfairDisplay.className} shadow-3xl`}
             >
