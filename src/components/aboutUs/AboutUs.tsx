@@ -40,7 +40,7 @@ const AboutUs = () => {
 
             <div className="flex h-full w-full flex-col items-center justify-center gap-3 md:w-[35%]">
               <div className="relative w-full">
-                <div className="absolute inset-0 z-50 flex flex-col items-center justify-center">
+                <div className="absolute inset-0 z-10 flex flex-col items-center justify-center">
                   <p
                     className={`${playfairDisplay.className} text-xl text-white`}
                   >

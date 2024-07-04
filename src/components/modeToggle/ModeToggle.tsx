@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
-import { DarkMode, LightMode } from "@mui/icons-material";
+import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useEffect, useState } from "react";
 
 const ModeToggle = () => {
@@ -25,9 +25,9 @@ const ModeToggle = () => {
   return isClient ? (
     <Button variant="outline" size="icon" onClick={changeTheme}>
       {theme === "light" ? (
-        <LightMode className="icon size-5" />
+        <SunIcon className="icon size-5" />
       ) : (
-        <DarkMode className="icon size-5" />
+        <MoonIcon className="icon size-5" />
       )}
     </Button>
   ) : null;

@@ -3,6 +3,7 @@ import MaxWidthWrapper from "../maxWidthWrapper/MaxWidthWrapper";
 import Logo from "../navbar/logo/Logo";
 import Link from "next/link";
 import { Email, LocationOn, Phone } from "@mui/icons-material";
+
 import footerBG from "../../../public/footerBG.png";
 import { playfairDisplay } from "@/app/layout";
 
