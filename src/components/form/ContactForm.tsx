@@ -2,7 +2,7 @@
 import React from "react";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { formSchema } from "@/validation/formSchema";
 import {
@@ -71,13 +71,15 @@ const ContactForm = () => {
           />
         </div>
 
-        <IvoryField
-          control={form.control}
-          name="message"
-          label="Message"
-          placeholder="Enter your message"
-          textarea
-        />
+        <div className="my-3">
+          <IvoryField
+            control={form.control}
+            name="message"
+            label="Message"
+            placeholder="Enter your message"
+            textarea
+          />
+        </div>
 
         <Button type="submit" className="my-3 h-[40px] w-full">
           Submit
@@ -89,25 +91,23 @@ const ContactForm = () => {
 
 export default ContactForm;
 
-type IvoryFieldProps<T> = {
-  control: any;
-  name: keyof T;
-  label: string;
-  placeholder: string;
-  textarea?: boolean;
-};
-
-export const IvoryField = <T,>({
+export const IvoryField = ({
   control,
   name,
   label,
   placeholder,
   textarea = false,
-}: IvoryFieldProps<T>) => {
+}: {
+  control: any;
+  name: any;
+  label: string;
+  placeholder: string;
+  textarea?: boolean;
+}) => {
   return (
-    <Controller
+    <FormField
       control={control}
-      name={name as any} // Type assertion to satisfy Controller's `name` prop
+      name={name}
       render={({ field }) => (
         <FormItem>
           <FormLabel className="text-background">{label}</FormLabel>
@@ -115,7 +115,7 @@ export const IvoryField = <T,>({
             {textarea ? (
               <Textarea
                 className="placeholder:text-muted-background text-background"
-                placeholder={placeholder}
+                placeholder="Enter your message"
                 rows={5}
                 {...field}
               />

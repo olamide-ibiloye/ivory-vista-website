@@ -12,7 +12,7 @@ export const formSchema = z.object({
   email: z.string().email({ message: "Invalid email address" }),
   phoneNumber: z
     .string()
-    .regex(/^\d+$/, "Phone number must be valid and contain only numbers"),
+    .regex(/^\d+$/, "Phone number must contain only numbers"),
   message: z.string().min(10, {
     message: "Message must contain at least 10 characters",
   }),
