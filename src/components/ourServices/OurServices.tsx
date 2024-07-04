@@ -7,7 +7,7 @@ import service1 from "../../../public/Service 1.jpg";
 const OurServices = () => {
   const ServiceCard = ({ title, body }: { title: string; body: string }) => {
     return (
-      <div className="rounded-lg bg-foreground p-5 text-background">
+      <div className="rounded-lg bg-foreground/80 p-5 text-background dark:bg-foreground">
         <h3
           className={`mb-3 text-xl font-medium md:text-2xl ${playfairDisplay.className}`}
         >

@@ -12,7 +12,7 @@ import Header from "../text/Header";
 const AboutUs = () => {
   return (
     <section>
-      <div className="flex min-h-[500px] flex-col items-center justify-center py-20">
+      <div className="ivory-section">
         <Header title="About Us" />
 
         <p className="py-10 text-center lg:w-[90%]">
