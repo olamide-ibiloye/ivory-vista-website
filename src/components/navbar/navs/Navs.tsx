@@ -7,8 +7,8 @@ const Navs = ({ vertical = false }: { vertical?: boolean }) => {
     <div
       className={`${playfairDisplay.className} ${vertical ? "flex-col items-start justify-start" : "flex-row items-center justify-center"} flex gap-10`}
     >
-      <Link href="">Home</Link>
-      <Link href="">About Us</Link>
+      <Link href="/">Home</Link>
+      <Link href="/about-us">About Us</Link>
       <Link href="">Our Services</Link>
       <Link href="">Projects</Link>
       <Link href="">Contact</Link>
