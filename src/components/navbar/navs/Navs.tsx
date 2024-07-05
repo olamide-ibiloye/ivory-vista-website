@@ -9,9 +9,9 @@ const Navs = ({ vertical = false }: { vertical?: boolean }) => {
     >
       <Link href="/">Home</Link>
       <Link href="/about-us">About Us</Link>
-      <Link href="">Our Services</Link>
-      <Link href="">Projects</Link>
-      <Link href="">Contact</Link>
+      <Link href="/our-services">Our Services</Link>
+      <Link href="/projects">Projects</Link>
+      <Link href="/contact">Contact</Link>
     </div>
   );
 };
