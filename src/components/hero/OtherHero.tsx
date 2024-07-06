@@ -25,14 +25,14 @@ const OtherHero = ({
           />
         </div>
 
-        <div className="relative z-10 mt-10 text-center max-lg:mb-10 md:left-[10%] md:mt-0 md:text-left lg:w-[40%]">
+        <div className="relative z-10 mt-10 text-center max-lg:mb-10 md:left-[10%] md:mt-0 md:text-left lg:w-[40%] 2xl:left-[15%]">
           <h1
             className={`text-5xl font-semibold md:text-7xl ${playfairDisplay.className} shadow-3xl`}
           >
             {title}
           </h1>
 
-          <p className="py-8 md:max-w-[70%]">{body}</p>
+          <p className="py-8 md:max-w-[70%] 2xl:max-w-[50%]">{body}</p>
         </div>
 
         <div className="flex h-[300px] items-center justify-center gap-5 lg:h-[500px] lg:justify-start">
