@@ -39,7 +39,7 @@ const ContactForm = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="z-50 w-full items-center max-md:px-5 md:w-[600px]"
+        className="z-10 w-full items-center max-md:px-5 md:w-[600px]"
       >
         <div className="flex grid-cols-2 flex-col gap-4 md:grid">
           <IvoryField

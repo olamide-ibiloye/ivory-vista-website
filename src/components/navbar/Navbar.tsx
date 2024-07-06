@@ -2,11 +2,10 @@ import React from "react";
 import MaxWidthWrapper from "../maxWidthWrapper/MaxWidthWrapper";
 import ModeToggle from "../modeToggle/ModeToggle";
 import Logo from "./logo/Logo";
-import Link from "next/link";
 import { Button } from "../ui/button";
-import { playfairDisplay } from "@/app/layout";
 import Sidebar from "./sidebar/Sidebar";
 import Navs from "./navs/Navs";
+import CallIcon from "@mui/icons-material/Call";
 
 const Navbar = () => {
   return (
@@ -21,7 +20,8 @@ const Navbar = () => {
         <div className="flex items-center justify-center gap-3">
           <Sidebar />
 
-          <Button className="hidden h-[40px] w-[150px] lg:block">
+          <Button className="hidden h-[40px] w-[150px] gap-2 lg:flex">
+            <CallIcon />
             Contact Us
           </Button>
 
