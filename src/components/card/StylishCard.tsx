@@ -1,14 +1,14 @@
-import { playfairDisplay } from "@/app/layout";
 import Image from "next/image";
 import React from "react";
 import service1 from "../../../public/Service 1.jpg";
+import { playfairDisplay } from "@/utils/utils";
 
 const StylishCard = ({
   image = service1,
   title = "Portfolio Management",
   subtitle = "We take the hassle out of finding your next tenant",
   body = "Everything from marketing your property to moving in your tenant is all handled by our team. You set the requirements and we screen the tenants to find you the perfect match. No upfront fees.",
-  left = true,
+  left = false,
 }) => {
   return (
     <div className="my-10 md:my-20">

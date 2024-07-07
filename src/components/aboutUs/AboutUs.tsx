@@ -1,4 +1,3 @@
-import { playfairDisplay } from "@/app/layout";
 import Image from "next/image";
 import React from "react";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
@@ -9,6 +8,7 @@ import interior4 from "../../../public/Interior 4.jpg";
 import interior5 from "../../../public/Interior 5.jpg";
 import Header from "../text/Header";
 import MaxWidthWrapper from "../maxWidthWrapper/MaxWidthWrapper";
+import { playfairDisplay } from "@/utils/utils";
 
 const AboutUs = () => {
   return (

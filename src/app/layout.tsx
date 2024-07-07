@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import DataProvider from "@/providers/DataProvider";
-
-const inter = Inter({ subsets: ["latin"] });
-
-export const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  display: "swap",
-});
+import { inter } from "@/utils/utils";
 
 export const metadata: Metadata = {
   title: "Ivory Vista Properties",

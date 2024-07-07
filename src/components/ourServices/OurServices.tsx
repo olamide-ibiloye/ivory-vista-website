@@ -1,9 +1,9 @@
 import React from "react";
 import Header from "../text/Header";
-import { playfairDisplay } from "@/app/layout";
 import Image from "next/image";
 import service1 from "../../../public/Service 1.jpg";
 import MaxWidthWrapper from "../maxWidthWrapper/MaxWidthWrapper";
+import { playfairDisplay } from "@/utils/utils";
 
 const OurServices = () => {
   const ServiceCard = ({ title, body }: { title: string; body: string }) => {

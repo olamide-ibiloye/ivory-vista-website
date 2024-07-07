@@ -3,7 +3,7 @@ import about2 from "../../../public/About 2.jpg";
 import about3 from "../../../public/About 3.jpg";
 import Image from "next/image";
 import dots from "../../../public/dots.png";
-import { playfairDisplay } from "@/app/layout";
+import { playfairDisplay } from "@/utils/utils";
 
 const OtherHero = ({
   title = "About Us",

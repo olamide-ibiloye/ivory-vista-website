@@ -1,4 +1,3 @@
-import { playfairDisplay } from "@/app/layout";
 import React from "react";
 import { Button } from "../ui/button";
 import house1 from "../../../public/House 1.jpg";
@@ -7,6 +6,7 @@ import IvoryCarousel from "../carousel/IvoryCarousel";
 import Image from "next/image";
 import dots from "../../../public/dots.png";
 import MaxWidthWrapper from "../maxWidthWrapper/MaxWidthWrapper";
+import { playfairDisplay } from "@/utils/utils";
 
 const MainHero = () => {
   const slides = [house2, house1];

@@ -1,9 +1,9 @@
 import React from "react";
 import Header from "../text/Header";
-import { playfairDisplay } from "@/app/layout";
 import Image from "next/image";
 import vision from "../../../public/Vision.jpg";
 import MaxWidthWrapper from "../maxWidthWrapper/MaxWidthWrapper";
+import { playfairDisplay } from "@/utils/utils";
 
 const VisionMission = () => {
   const ServiceCard = ({ title, body }: { title: string; body: string }) => {

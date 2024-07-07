@@ -7,7 +7,13 @@ import lightLogo from "../../../../public/logo-white.png";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 
-const Logo = ({ classes }: { classes?: string }) => {
+const Logo = ({
+  classes,
+  noLink = false,
+}: {
+  classes?: string;
+  noLink?: boolean;
+}) => {
   const { resolvedTheme } = useTheme();
   const [src, setSrc] = useState(lightLogo);
 
@@ -16,7 +22,10 @@ const Logo = ({ classes }: { classes?: string }) => {
   }, [resolvedTheme]);
 
   return (
-    <Link href="/">
+    <Link
+      href={`${noLink ? "" : "/"}`}
+      className={`${noLink ? "cursor-default" : ""}`}
+    >
       <Image
         src={src}
         height={150}

@@ -1,4 +1,4 @@
-import { playfairDisplay } from "@/app/layout";
+import { playfairDisplay } from "@/utils/utils";
 import React from "react";
 
 const Header = ({ title, classes }: { title: string; classes?: string }) => {

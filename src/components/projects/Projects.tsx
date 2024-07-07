@@ -3,8 +3,8 @@ import Header from "../text/Header";
 import Image from "next/image";
 import projects1 from "../../../public/Projects 1.jpg";
 import projects2 from "../../../public/Projects 2.jpg";
-import { playfairDisplay } from "@/app/layout";
 import MaxWidthWrapper from "../maxWidthWrapper/MaxWidthWrapper";
+import { playfairDisplay } from "@/utils/utils";
 
 const Projects = () => {
   const ProjectCard = ({
