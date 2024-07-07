@@ -8,7 +8,7 @@ import { playfairDisplay } from "@/utils/utils";
 const OurServices = () => {
   const ServiceCard = ({ title, body }: { title: string; body: string }) => {
     return (
-      <div className="rounded-lg bg-foreground/80 p-5 text-background dark:bg-foreground">
+      <div className="rounded-lg bg-muted-foreground p-5 text-background">
         <h3
           className={`mb-3 text-xl font-medium md:text-2xl ${playfairDisplay.className}`}
         >
