@@ -1,8 +1,10 @@
 "use client";
 
+import { navLinks } from "@/components/constants";
 import { playfairDisplay } from "@/utils/utils";
 import Link from "next/link";
-import React, { ReactNode } from "react";
+import { usePathname } from "next/navigation";
+import React from "react";
 
 const Navs = ({
   vertical = false,
@@ -13,35 +15,34 @@ const Navs = ({
   open?: boolean;
   setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+  const pathname = usePathname();
+
   const handleNavClick = () => {
     if (open) {
       setOpen && setOpen(false);
     }
   };
 
-  const IvoryLink = ({
-    href,
-    children,
-  }: {
-    href: string;
-    children: ReactNode;
-  }) => {
-    return (
-      <Link href={href} onClick={handleNavClick}>
-        {children}
-      </Link>
-    );
-  };
-
   return (
     <div
       className={`${playfairDisplay.className} ${vertical ? "flex-col items-start justify-start" : "flex-row items-center justify-center"} flex gap-10`}
     >
-      <IvoryLink href="/">Home</IvoryLink>
-      <IvoryLink href="/about-us">About Us</IvoryLink>
-      <IvoryLink href="/our-services">Our Services</IvoryLink>
-      <IvoryLink href="/projects">Projects</IvoryLink>
-      <IvoryLink href="/contact">Contact</IvoryLink>
+      {navLinks.map((navLink) => {
+        const isActive =
+          pathname === navLink.route ||
+          pathname.startsWith(`${navLink.route}/`);
+
+        return (
+          <Link
+            key={navLink.label}
+            href={navLink.route}
+            onClick={handleNavClick}
+            className={`${isActive ? "border-b-2 border-b-primary" : "border-b-2 border-b-transparent"}`}
+          >
+            {navLink.label}
+          </Link>
+        );
+      })}
     </div>
   );
 };
