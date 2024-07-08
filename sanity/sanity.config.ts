@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'Ivory Vista Website',
 
-  projectId: 'vuvltdb8',
+  projectId: 'exhx7ece',
   dataset: 'production',
 
   plugins: [structureTool(), visionTool()],
