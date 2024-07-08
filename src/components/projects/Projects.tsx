@@ -30,7 +30,7 @@ const Projects = () => {
           />
         </div>
 
-        <div className="h-[300px] w-full rounded-lg bg-muted-foreground p-10 text-background md:w-[50%]">
+        <div className="h-[300px] w-full rounded-lg bg-muted-foreground p-10 text-background dark:bg-foreground/90 md:w-[50%]">
           <h3
             className={`mb-3 text-xl font-medium md:text-2xl ${playfairDisplay.className}`}
           >

@@ -14,7 +14,7 @@ const StylishCard = ({
     <div className="my-10 md:my-20">
       <div className={`relative ${left ? "flex justify-end" : ""}`}>
         <div
-          className={`w-full bg-muted-foreground p-5 text-background md:w-[80%] md:p-0 ${left ? "flex flex-col items-end justify-end" : ""}`}
+          className={`w-full bg-muted-foreground p-5 text-background dark:bg-foreground/90 md:w-[80%] md:p-0 ${left ? "flex flex-col items-end justify-end" : ""}`}
         >
           <div
             className={`absolute ${left ? "left-0 top-10" : "bottom-10 right-0"} z-10 hidden h-[450px] w-[40%] md:block`}
