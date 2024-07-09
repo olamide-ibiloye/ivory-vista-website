@@ -15,10 +15,6 @@ const config = {
       padding: "2rem",
       screens: {
         "2xl": "1536px",
-        "3xl": "1792px",
-        "4xl": "2048px",
-        "5xl": "2304px",
-        "6xl": "2560px",
       },
     },
     extend: {
@@ -56,6 +52,12 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+      },
+      screens: {
+        "3xl": "1792px",
+        "4xl": "2048px",
+        "5xl": "2304px",
+        "6xl": "2560px",
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -63,3 +63,21 @@
     @apply flex min-h-[500px] flex-col items-center justify-start py-20;
   }
 }
+
+.custom-bullet-list {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.custom-number-list {
+  list-style-type: decimal;
+  padding-left: 20px;
+}
+
+.custom-bullet-item {
+  margin-bottom: 10px;
+}
+
+.custom-number-item {
+  margin-bottom: 10px;
+}

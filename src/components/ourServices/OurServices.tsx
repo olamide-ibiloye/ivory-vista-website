@@ -1,21 +1,37 @@
 import React from "react";
 import Header from "../text/Header";
 import Image from "next/image";
-import service1 from "../../../public/Service 1.jpg";
 import MaxWidthWrapper from "../maxWidthWrapper/MaxWidthWrapper";
-import { playfairDisplay } from "@/utils/utils";
+import { getSlides, playfairDisplay } from "@/utils/utils";
+import IvoryPortableText from "../portableText/IvoryPortableText";
 
-const OurServices = () => {
-  const ServiceCard = ({ title, body }: { title: string; body: string }) => {
+type DataType = {
+  title: string;
+  services: any;
+  images: any[];
+};
+
+interface OurServicesProps {
+  data: DataType;
+}
+
+const OurServices: React.FC<OurServicesProps> = ({ data }) => {
+  const { title, services, images } = data;
+
+  const slides = getSlides(images);
+
+  const ServiceCard = ({ title, body }: { title: string; body: any }) => {
     return (
-      <div className="rounded-lg bg-muted-foreground p-5 text-background dark:bg-foreground/90">
+      <div className="w-full rounded-lg bg-muted-foreground p-5 text-background dark:bg-foreground/90 md:w-[600px]">
         <h3
           className={`mb-3 text-xl font-medium md:text-2xl ${playfairDisplay.className}`}
         >
           {title}
         </h3>
 
-        <p>{body}</p>
+        <div className="prose dark:prose-invert prose-headings:font-inter info-text min-w-full text-left max-lg:mb-8">
+          <IvoryPortableText content={body} />
+        </div>
       </div>
     );
   };
@@ -24,47 +40,41 @@ const OurServices = () => {
     <section>
       <MaxWidthWrapper>
         <div className="min-h-[500px] py-10">
-          <Header title="Our Services" classes="text-center md:text-left" />
+          <Header title={title} classes="text-center lg:text-left" />
 
-          <div className="md;gap-5 flex flex-col items-center justify-center gap-10 py-10 md:flex-row">
-            <div className="hidden max-md:block">
+          <div className="flex flex-col items-center justify-center gap-10 py-10 md:gap-5 lg:flex-row">
+            <div className="hidden h-[250px] w-[250px] max-lg:block">
               <Image
-                src={service1}
-                alt=""
-                width={250}
-                height={250}
+                src={slides[0].image}
+                alt={slides[0].alt_text}
+                width={1000}
+                height={1000}
                 className="rounded-full"
               />
             </div>
 
-            <div className="flex flex-col items-start justify-start gap-3 md:w-[50%]">
-              <ServiceCard
-                title="Portfolio Management"
-                body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget
-                diam habitant massa in."
-              />
-
-              <ServiceCard
-                title="Joint Venture"
-                body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget
-                diam habitant massa in."
-              />
-
-              <ServiceCard
-                title="Refurbishment As A Service"
-                body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget
-                diam habitant massa in."
-              />
+            <div className="flex flex-col items-center justify-start gap-3 md:w-[50%]">
+              {services.cards
+                .slice(0, 3)
+                .map((service: { title: string; body: any }, idx: any) => (
+                  <ServiceCard
+                    key={`service-${idx}`}
+                    title={service.title}
+                    body={service.body}
+                  />
+                ))}
             </div>
 
-            <div className="hidden items-center justify-center md:flex md:w-[50%]">
-              <Image
-                src={service1}
-                alt=""
-                width={350}
-                height={350}
-                className="rounded-full"
-              />
+            <div className="hidden items-center justify-center lg:flex lg:w-[50%]">
+              <div className="h-[350px] w-[350px]">
+                <Image
+                  src={slides[0].image}
+                  alt={slides[0].alt_text}
+                  width={1000}
+                  height={1000}
+                  className="rounded-full"
+                />
+              </div>
             </div>
           </div>
         </div>

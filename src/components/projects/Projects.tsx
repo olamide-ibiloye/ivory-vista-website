@@ -6,7 +6,18 @@ import projects2 from "../../../public/Projects 2.jpg";
 import MaxWidthWrapper from "../maxWidthWrapper/MaxWidthWrapper";
 import { playfairDisplay } from "@/utils/utils";
 
-const Projects = () => {
+type DataType = {
+  title: string;
+  body: string;
+};
+
+interface ProjectsProps {
+  data: DataType;
+}
+
+const Projects: React.FC<ProjectsProps> = ({ data }) => {
+  const { title, body } = data;
+
   const ProjectCard = ({
     image,
     title,
@@ -50,14 +61,9 @@ const Projects = () => {
     <section>
       <MaxWidthWrapper>
         <div className="ivory-section">
-          <Header title="Projects" />
+          <Header title={title} />
 
-          <p className="py-10 text-center lg:w-[90%]">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry&apos;s standard dummy
-            text ever since the 1500s, when an unknown printer took a galley of
-            type and scrambled it to make a type specimen book.
-          </p>
+          <p className="py-10 text-center lg:w-[90%]">{body}</p>
 
           <div className="flex flex-col items-center justify-center gap-4">
             <ProjectCard

@@ -6,7 +6,6 @@ import { playfairDisplay } from "@/utils/utils";
 const StylishCard = ({
   image = service1,
   title = "Portfolio Management",
-  subtitle = "We take the hassle out of finding your next tenant",
   body = "Everything from marketing your property to moving in your tenant is all handled by our team. You set the requirements and we screen the tenants to find you the perfect match. No upfront fees.",
   left = false,
 }) => {
@@ -30,12 +29,10 @@ const StylishCard = ({
             className={`flex h-full flex-col items-start justify-start py-5 md:min-h-[450px] md:w-[75%] md:justify-center md:p-10 lg:p-20 ${left ? "md:text-right" : ""}`}
           >
             <h3
-              className={`w-full text-2xl font-medium md:text-4xl ${playfairDisplay.className}`}
+              className={`mb-5 w-full text-2xl font-medium md:text-4xl ${playfairDisplay.className}`}
             >
               {title}
             </h3>
-
-            <p className="w-full py-5 text-[17px] md:text-xl">{subtitle}</p>
 
             <p className="text-[14px] md:text-[16px]">{body}</p>
           </div>

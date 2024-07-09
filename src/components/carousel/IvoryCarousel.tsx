@@ -30,8 +30,10 @@ const IvoryCarousel = ({ slides }: { slides: any[] }) => {
             className="h-[400px] w-full md:h-[650px] md:basis-11/12"
           >
             <Image
-              src={slide}
+              src={slide.image}
               alt={`slide-${index + 1}`}
+              width={1000}
+              height={1000}
               priority
               className="h-full w-full rounded-lg object-cover"
             />

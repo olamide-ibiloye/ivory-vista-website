@@ -1,15 +1,25 @@
 import React from "react";
 import { Button } from "../ui/button";
-import house1 from "../../../public/House 1.jpg";
-import house2 from "../../../public/House 2.jpg";
 import IvoryCarousel from "../carousel/IvoryCarousel";
 import Image from "next/image";
 import dots from "../../../public/dots.png";
-import MaxWidthWrapper from "../maxWidthWrapper/MaxWidthWrapper";
-import { playfairDisplay } from "@/utils/utils";
+import { getSlides, playfairDisplay } from "@/utils/utils";
 
-const MainHero = () => {
-  const slides = [house2, house1];
+export type DataType = {
+  title: string;
+  body: string;
+  buttonName: string;
+  images: any[];
+};
+
+interface MainHeroProps {
+  data: DataType;
+}
+
+const MainHero: React.FC<MainHeroProps> = ({ data }) => {
+  const { title, body, buttonName, images } = data;
+
+  const slides = getSlides(images);
 
   return (
     <section className="relative">
@@ -26,20 +36,18 @@ const MainHero = () => {
           <IvoryCarousel slides={slides} />
         </div>
 
-        <div className="relative z-10 ml-auto mt-10 text-center md:left-[10%] md:mt-0 md:w-[75%] md:text-left 2xl:left-[30%]">
+        <div className="3xl:left-[30%] 5xl:left-[35%] relative z-10 ml-auto mt-10 text-center md:left-[10%] md:mt-0 md:w-[75%] md:text-left 2xl:left-[20%]">
           <h1
-            className={`text-5xl font-semibold md:text-7xl 2xl:max-w-[65%] ${playfairDisplay.className} shadow-3xl`}
+            className={`4xl:max-w-[40%] text-5xl font-semibold md:text-7xl 2xl:max-w-[65%] ${playfairDisplay.className} shadow-3xl text-balance`}
           >
-            Welcome to Ivory Vista Properties
+            {title}
           </h1>
 
-          <p className="py-8 md:max-w-[70%] 2xl:max-w-[50%]">
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-            sint. Velit officia consequat duis enim velit mollit. Exercitation
-            veniam consequat sunt nostrud amet.
+          <p className="4xl:max-w-[30%] py-8 md:max-w-[70%] 2xl:max-w-[50%]">
+            {body}
           </p>
 
-          <Button className="h-[50px] w-[200px]">See Projects</Button>
+          <Button className="h-[50px] w-[200px]">{buttonName}</Button>
         </div>
 
         <div className="hidden max-w-[50%] md:block 2xl:max-w-[40%]">

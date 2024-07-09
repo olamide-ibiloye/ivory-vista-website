@@ -1,21 +1,16 @@
 import {defineType, defineField, defineArrayMember} from 'sanity'
 
-export const card = defineType({
+export const whyChooseUsText = defineType({
   type: 'object',
-  name: 'card',
-  title: 'Card',
+  name: 'whyChooseUsText',
+  title: 'Why Choose Us Text',
   fields: [
     defineField({type: 'string', name: 'title'}),
+    defineField({type: 'text', name: 'subTitle'}),
     defineField({
       type: 'array',
       name: 'body',
       of: [defineArrayMember({type: 'block'})],
-    }),
-    defineField({
-      type: 'array',
-      name: 'images',
-      title: 'Card Image',
-      of: [defineArrayMember({type: 'sectionImage'})],
     }),
   ],
 })

@@ -1,39 +1,35 @@
 import Image from "next/image";
 import React from "react";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
-import interior1 from "../../../public/Interior 1.jpg";
-import interior2 from "../../../public/Interior 2.jpg";
-import interior3 from "../../../public/Interior 3.jpg";
-import interior4 from "../../../public/Interior 4.jpg";
-import interior5 from "../../../public/Interior 5.jpg";
 import Header from "../text/Header";
 import MaxWidthWrapper from "../maxWidthWrapper/MaxWidthWrapper";
-import { playfairDisplay } from "@/utils/utils";
+import { getSlides, playfairDisplay } from "@/utils/utils";
+import { DataType } from "../hero/MainHero";
 
-const AboutUs = () => {
+interface AboutUsProps {
+  data: DataType;
+}
+
+const AboutUs: React.FC<AboutUsProps> = ({ data }) => {
+  const { title, body, buttonName, images } = data;
+
+  const slides = getSlides(images);
+
   return (
     <section>
       <MaxWidthWrapper>
         <div className="ivory-section">
-          <Header title="About Us" />
+          <Header title={title} />
 
-          <p className="py-10 text-center lg:w-[90%]">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry&apos;s standard dummy
-            text ever since the 1500s, when an unknown printer took a galley of
-            type and scrambled it to make a type specimen book. It has survived
-            not only five centuries, but also the leap into electronic
-            typesetting, remaining essentially unchanged. It was popularised in
-            the 1960s with the release of Letraset sheets containing Lorem Ipsum
-            passages, and more recently with desktop publishing software like
-            Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
+          <p className="py-10 text-center lg:w-[90%]">{body}</p>
 
           <div className="my-5 flex w-full flex-col items-center justify-center gap-3 md:flex-row">
             <div className="h-full w-full md:w-[30%]">
               <Image
-                src={interior1}
-                alt=""
+                src={slides[0].image}
+                alt={slides[0].alt_text}
+                height={1000}
+                width={1000}
                 className="h-[512px] w-full rounded-lg object-cover"
               />
             </div>
@@ -44,7 +40,7 @@ const AboutUs = () => {
                   <p
                     className={`${playfairDisplay.className} text-xl text-white`}
                   >
-                    Read more
+                    {buttonName}
                   </p>
 
                   <div className="cursor-pointer rounded-full bg-primary p-5">
@@ -55,16 +51,20 @@ const AboutUs = () => {
                 <div className="absolute inset-0 rounded-lg bg-[#0D0A0A] opacity-60" />
 
                 <Image
-                  src={interior2}
-                  alt=""
+                  src={slides[1].image}
+                  alt={slides[1].alt_text}
+                  height={1000}
+                  width={1000}
                   className="h-[250px] w-full rounded-lg object-cover"
                 />
               </div>
 
               <div className="w-full">
                 <Image
-                  src={interior3}
-                  alt=""
+                  src={slides[2].image}
+                  alt={slides[2].alt_text}
+                  height={1000}
+                  width={1000}
                   className="h-[250px] w-full rounded-lg object-cover"
                 />
               </div>
@@ -73,15 +73,19 @@ const AboutUs = () => {
             <div className="flex h-full w-full flex-col items-center justify-center gap-3 md:w-[35%]">
               <div className="w-full">
                 <Image
-                  src={interior4}
-                  alt=""
+                  src={slides[3].image}
+                  alt={slides[3].alt_text}
+                  height={1000}
+                  width={1000}
                   className="h-[250px] w-full rounded-lg object-cover"
                 />
               </div>
               <div className="w-full">
                 <Image
-                  src={interior5}
-                  alt=""
+                  src={slides[4].image}
+                  alt={slides[4].alt_text}
+                  height={1000}
+                  width={1000}
                   className="h-[250px] w-full rounded-lg object-cover"
                 />
               </div>

@@ -5,6 +5,12 @@ import service1 from "../../../public/Service 1.jpg";
 import service2 from "../../../public/Service 2.jpg";
 import service3 from "../../../public/Service 3.jpg";
 import Services from "@/components/services/Services";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Ivory Vista Properties | Our Services page",
+  description: "Welcome to the official Ivory Vista Properties website",
+};
 
 const page = () => {
   return (

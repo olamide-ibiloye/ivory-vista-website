@@ -27,7 +27,7 @@ const OtherHero = ({
 
         <div className="relative z-10 mt-10 text-center max-lg:mb-10 md:left-[10%] md:mt-0 md:text-left lg:w-[40%] 2xl:left-[15%]">
           <h1
-            className={`text-5xl font-semibold md:text-7xl ${playfairDisplay.className} shadow-3xl`}
+            className={`text-balance text-5xl font-semibold md:text-7xl ${playfairDisplay.className} shadow-3xl`}
           >
             {title}
           </h1>
