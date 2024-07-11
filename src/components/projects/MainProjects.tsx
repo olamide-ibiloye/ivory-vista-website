@@ -10,7 +10,13 @@ const MainProjects = () => {
       <MaxWidthWrapper>
         <div className="ivory-section flex min-h-[600px] flex-col gap-5">
           {projects.map((service: string, idx: number) => (
-            <StylishCard key={idx} title={service} left={idx % 2 !== 0} />
+            <StylishCard
+              key={idx}
+              title={service}
+              left={idx % 2 !== 0}
+              image={[]}
+              body={undefined}
+            />
           ))}
         </div>
       </MaxWidthWrapper>
