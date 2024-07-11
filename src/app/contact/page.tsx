@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <main>
-      <OtherHero />
+      {/* <OtherHero />
 
-      <ContactUs />
+      <ContactUs /> */}
     </main>
   );
 };
