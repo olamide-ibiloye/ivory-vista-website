@@ -11,11 +11,7 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <main>
-      <OtherHero
-        title="Contact"
-        body="Welcome to your source for leasing and managing beautiful rental homes Indonesia"
-        // images={[service1, service2, service3]}
-      />
+      <OtherHero />
 
       <ContactUs />
     </main>
