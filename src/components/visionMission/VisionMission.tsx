@@ -5,7 +5,24 @@ import vision from "../../../public/Vision.jpg";
 import MaxWidthWrapper from "../maxWidthWrapper/MaxWidthWrapper";
 import { playfairDisplay } from "@/utils/utils";
 
-const VisionMission = () => {
+type Point = {
+  title: string;
+  body: string;
+};
+
+type DataType = {
+  title: string;
+  services: { points: Point[] };
+  images: any[];
+};
+
+interface VisionMissionProps {
+  data: DataType;
+}
+
+const VisionMission: React.FC<VisionMissionProps> = ({ data }) => {
+  const { title, services, images } = data;
+
   const ServiceCard = ({ title, body }: { title: string; body: string }) => {
     return (
       <div className="rounded-lg bg-muted-foreground p-5 text-background dark:bg-foreground/90">
@@ -24,10 +41,7 @@ const VisionMission = () => {
     <section>
       <MaxWidthWrapper>
         <div className="min-h-[700px] py-20">
-          <Header
-            title="Our Vision & Mission"
-            classes="text-center md:text-left"
-          />
+          <Header title={title} classes="text-center md:text-left" />
 
           <div className="md;gap-5 flex flex-col items-center justify-center gap-10 py-10 md:flex-row">
             <div className="hidden max-md:block">
@@ -41,17 +55,9 @@ const VisionMission = () => {
             </div>
 
             <div className="flex flex-col items-start justify-start gap-3 md:w-[50%]">
-              <ServiceCard
-                title="Vision"
-                body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget
-                diam habitant massa in."
-              />
-
-              <ServiceCard
-                title="Mission"
-                body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget
-                diam habitant massa in."
-              />
+              {services.points.map(({ title, body }) => (
+                <ServiceCard key={title} title={title} body={body} />
+              ))}
             </div>
 
             <div className="hidden items-center justify-center md:flex md:w-[50%]">

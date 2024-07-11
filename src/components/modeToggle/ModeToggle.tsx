@@ -23,7 +23,12 @@ const ModeToggle = () => {
   };
 
   return isClient ? (
-    <Button variant="outline" size="icon" onClick={changeTheme}>
+    <Button
+      variant="outline"
+      size="icon"
+      onClick={changeTheme}
+      className="h-[40px] w-[40px]"
+    >
       {theme === "light" ? (
         <SunIcon className="icon size-5" />
       ) : (

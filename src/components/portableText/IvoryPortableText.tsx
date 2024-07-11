@@ -12,6 +12,10 @@ const serializers: PortableTextComponents = {
   marks: {
     // Define how to render different marks (like links, bold, etc.), if necessary
   },
+  block: {
+    // Ex. 1: customizing common block types
+    h3: ({ children }) => <h1 className="mb-4 text-2xl">{children}</h1>,
+  },
   list: {
     bullet: ({ children }: PortableTextComponentProps<any>) => (
       <ul className="custom-bullet-list">{children}</ul>

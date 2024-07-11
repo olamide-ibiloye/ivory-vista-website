@@ -5,6 +5,7 @@ import Header from "../text/Header";
 import MaxWidthWrapper from "../maxWidthWrapper/MaxWidthWrapper";
 import { getSlides, playfairDisplay } from "@/utils/utils";
 import { DataType } from "../hero/MainHero";
+import Link from "next/link";
 
 interface AboutUsProps {
   data: DataType;
@@ -36,17 +37,19 @@ const AboutUs: React.FC<AboutUsProps> = ({ data }) => {
 
             <div className="flex h-full w-full flex-col items-center justify-center gap-3 md:w-[35%]">
               <div className="relative w-full">
-                <div className="absolute inset-0 z-10 flex flex-col items-center justify-center">
-                  <p
-                    className={`${playfairDisplay.className} text-xl text-white`}
-                  >
-                    {buttonName}
-                  </p>
+                <Link href="/about-us">
+                  <div className="absolute inset-0 z-10 flex flex-col items-center justify-center">
+                    <p
+                      className={`${playfairDisplay.className} text-xl text-white`}
+                    >
+                      {buttonName}
+                    </p>
 
-                  <div className="cursor-pointer rounded-full bg-primary p-5">
-                    <ArrowRightIcon className="h-6 w-6 text-white" />
+                    <div className="cursor-pointer rounded-full bg-primary p-5">
+                      <ArrowRightIcon className="h-6 w-6 text-white" />
+                    </div>
                   </div>
-                </div>
+                </Link>
 
                 <div className="absolute inset-0 rounded-lg bg-[#0D0A0A] opacity-60" />
 

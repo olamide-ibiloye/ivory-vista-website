@@ -1,31 +1,44 @@
 import ContactUs from "@/components/contactUs/ContactUs";
 import OtherHero from "@/components/hero/OtherHero";
 import React from "react";
-import service1 from "../../../public/Service 1.jpg";
-import service2 from "../../../public/Service 2.jpg";
-import service3 from "../../../public/Service 3.jpg";
 import Services from "@/components/services/Services";
 import { Metadata } from "next";
+import { client } from "@/utils/client";
 
 export const metadata: Metadata = {
   title: "Ivory Vista Properties | Our Services page",
   description: "Welcome to the official Ivory Vista Properties website",
 };
 
-const page = () => {
+export const revalidate = 300;
+
+const getContent = async () => {
+  try {
+    const CONTENT_QUERY = `
+      *[_type == 'ourServices'][0] {
+        our_services,
+        hero_section
+      } `;
+
+    return await client.fetch(CONTENT_QUERY);
+  } catch (error) {
+    console.error("Error fetching content:", error);
+    throw error;
+  }
+};
+
+const OurServices = async () => {
+  const { our_services, hero_section } = await getContent();
+
   return (
     <main>
-      <OtherHero
-        title="Our Services"
-        body="Welcome to your source for leasing and managing beautiful rental homes Indonesia"
-        // images={[service1, service2, service3]}
-      />
+      <OtherHero data={hero_section} />
 
-      <Services />
+      <Services data={our_services} />
 
       <ContactUs />
     </main>
   );
 };
 
-export default page;
+export default OurServices;

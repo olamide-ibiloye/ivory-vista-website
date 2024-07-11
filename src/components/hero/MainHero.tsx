@@ -4,11 +4,12 @@ import IvoryCarousel from "../carousel/IvoryCarousel";
 import Image from "next/image";
 import dots from "../../../public/dots.png";
 import { getSlides, playfairDisplay } from "@/utils/utils";
+import Link from "next/link";
 
 export type DataType = {
   title: string;
   body: string;
-  buttonName: string;
+  buttonName?: string;
   images: any[];
 };
 
@@ -47,7 +48,11 @@ const MainHero: React.FC<MainHeroProps> = ({ data }) => {
             {body}
           </p>
 
-          <Button className="h-[50px] w-[200px]">{buttonName}</Button>
+          {buttonName && (
+            <Button className="h-[50px] w-[200px]" asChild>
+              <Link href="/projects">{buttonName}</Link>
+            </Button>
+          )}
         </div>
 
         <div className="hidden max-w-[50%] md:block 2xl:max-w-[40%]">

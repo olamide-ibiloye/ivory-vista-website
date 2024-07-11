@@ -14,6 +14,9 @@ import Logo from "../logo/Logo";
 import Navs from "../navs/Navs";
 import React, { useEffect } from "react";
 import { useIsLargeScreen } from "@/components/hooks/useData";
+import CallIcon from "@mui/icons-material/Call";
+import EventIcon from "@mui/icons-material/Event";
+import Link from "next/link";
 
 const Sidebar = () => {
   const [open, setOpen] = React.useState(false);
@@ -24,6 +27,12 @@ const Sidebar = () => {
       setOpen(false);
     }
   }, [isLargeScreen]);
+
+  const handleNavClick = () => {
+    if (open) {
+      setOpen && setOpen(false);
+    }
+  };
 
   return (
     <div className="hidden max-lg:flex">
@@ -46,7 +55,27 @@ const Sidebar = () => {
             <SheetDescription></SheetDescription>
           </SheetHeader>
 
-          <Navs open={open} setOpen={setOpen} vertical />
+          <Navs handleNavClick={handleNavClick} vertical />
+
+          <Button
+            className="mb-5 mt-20 h-[40px] w-full gap-2 border-primary lg:flex"
+            variant="outline"
+            onClick={handleNavClick}
+            asChild
+          >
+            <Link href="#contact-form">
+              <CallIcon />
+              Contact
+            </Link>
+          </Button>
+
+          <Button
+            className="h-[40px] w-full gap-2 lg:flex"
+            onClick={handleNavClick}
+          >
+            <EventIcon />
+            Book a Strategy Session
+          </Button>
         </SheetContent>
       </Sheet>
     </div>

@@ -8,13 +8,29 @@ const services = [
   "Refurbishment As A Service",
 ];
 
-const Services = () => {
+type DataType = {
+  cards: { title: string; body: any[]; images: any[] }[];
+};
+
+interface ServicesProps {
+  data: DataType;
+}
+
+const Services: React.FC<ServicesProps> = ({ data }) => {
+  const { cards } = data;
+
   return (
     <section>
       <MaxWidthWrapper>
         <div className="ivory-section flex min-h-[600px] flex-col gap-5">
-          {services.map((service: string, idx: number) => (
-            <StylishCard key={idx} title={service} left={idx % 2 !== 0} />
+          {cards.map((service, idx: number) => (
+            <StylishCard
+              key={idx}
+              title={service.title}
+              image={service.images}
+              body={service.body}
+              left={idx % 2 !== 0}
+            />
           ))}
         </div>
       </MaxWidthWrapper>

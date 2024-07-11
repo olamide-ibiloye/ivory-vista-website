@@ -15,8 +15,8 @@ export const navLinks = [
     route: "/projects",
     label: "Projects",
   },
-  {
-    route: "/contact",
-    label: "Contact",
-  },
+  // {
+  //   route: "/contact",
+  //   label: "Contact",
+  // },
 ];

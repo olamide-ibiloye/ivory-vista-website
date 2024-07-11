@@ -8,20 +8,12 @@ import React from "react";
 
 const Navs = ({
   vertical = false,
-  open,
-  setOpen,
+  handleNavClick,
 }: {
   vertical?: boolean;
-  open?: boolean;
-  setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
+  handleNavClick?: () => void;
 }) => {
   const pathname = usePathname();
-
-  const handleNavClick = () => {
-    if (open) {
-      setOpen && setOpen(false);
-    }
-  };
 
   return (
     <div

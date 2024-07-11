@@ -1,6 +1,7 @@
 import ContactUs from "@/components/contactUs/ContactUs";
 import OtherHero from "@/components/hero/OtherHero";
 import MainProjects from "@/components/projects/MainProjects";
+import { client } from "@/utils/client";
 import { Metadata } from "next";
 import React from "react";
 
@@ -9,20 +10,34 @@ export const metadata: Metadata = {
   description: "Welcome to the official Ivory Vista Properties website",
 };
 
-const page = () => {
+export const revalidate = 300;
+
+const getContent = async () => {
+  try {
+    const CONTENT_QUERY = `
+      *[_type == 'projects'][0] {
+      hero_section
+    } `;
+
+    return await client.fetch(CONTENT_QUERY);
+  } catch (error) {
+    console.error("Error fetching content:", error);
+    throw error;
+  }
+};
+
+const Projects = async () => {
+  const { hero_section } = await getContent();
+
   return (
     <main>
-      <OtherHero
-        title="Projects"
-        body="Welcome to your source for leasing and managing beautiful rental homes Indonesia"
-        // images={[service1, service2, service3]}
-      />
+      <OtherHero data={hero_section} />
 
-      <MainProjects />
+      {/* <MainProjects /> */}
 
       <ContactUs />
     </main>
   );
 };
 
-export default page;
+export default Projects;

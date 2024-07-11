@@ -6,6 +6,8 @@ import { Button } from "../ui/button";
 import Sidebar from "./sidebar/Sidebar";
 import Navs from "./navs/Navs";
 import CallIcon from "@mui/icons-material/Call";
+import EventIcon from "@mui/icons-material/Event";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -20,9 +22,20 @@ const Navbar = () => {
         <div className="flex items-center justify-center gap-3">
           <Sidebar />
 
-          <Button className="hidden h-[40px] w-[150px] gap-2 lg:flex">
-            <CallIcon />
-            Contact Us
+          <Button
+            className="hidden h-[40px] gap-2 border-primary lg:flex"
+            variant="outline"
+            asChild
+          >
+            <Link href="#contact-form">
+              <CallIcon />
+              Contact
+            </Link>
+          </Button>
+
+          <Button className="hidden h-[40px] gap-2 lg:flex">
+            <EventIcon />
+            Book a Strategy Session
           </Button>
 
           <ModeToggle />

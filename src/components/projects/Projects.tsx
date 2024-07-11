@@ -5,6 +5,8 @@ import projects1 from "../../../public/Projects 1.jpg";
 import projects2 from "../../../public/Projects 2.jpg";
 import MaxWidthWrapper from "../maxWidthWrapper/MaxWidthWrapper";
 import { playfairDisplay } from "@/utils/utils";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
 type DataType = {
   title: string;
@@ -68,7 +70,7 @@ const Projects: React.FC<ProjectsProps> = ({ data }) => {
           <div className="flex flex-col items-center justify-center gap-4">
             <ProjectCard
               image={projects1}
-              title="Interior Design"
+              title="Project 1"
               body="Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet sint. Velit officia consequat duis enim velit mollit.
                 Exercitation veniam consequat sunt nostrud amet. Amet minim
@@ -78,7 +80,7 @@ const Projects: React.FC<ProjectsProps> = ({ data }) => {
 
             <ProjectCard
               image={projects2}
-              title="Interior Design"
+              title="Project 2"
               body="Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet sint. Velit officia consequat duis enim velit mollit.
                 Exercitation veniam consequat sunt nostrud amet. Amet minim
@@ -87,6 +89,14 @@ const Projects: React.FC<ProjectsProps> = ({ data }) => {
               reverse
             />
           </div>
+
+          <Button
+            className="mt-10 h-[50px] w-[200px] border-primary"
+            variant="outline"
+            asChild
+          >
+            <Link href="/projects">View More</Link>
+          </Button>
         </div>
       </MaxWidthWrapper>
     </section>

@@ -29,9 +29,7 @@ const OurServices: React.FC<OurServicesProps> = ({ data }) => {
           {title}
         </h3>
 
-        <div className="prose dark:prose-invert prose-headings:font-inter info-text min-w-full text-left max-lg:mb-8">
-          <IvoryPortableText content={body} />
-        </div>
+        <IvoryPortableText content={body} />
       </div>
     );
   };
