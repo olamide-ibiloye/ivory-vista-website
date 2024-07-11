@@ -4,7 +4,7 @@ import OurServices from "@/components/ourServices/OurServices";
 import Projects from "@/components/projects/Projects";
 import ContactUs from "@/components/contactUs/ContactUs";
 import { Metadata } from "next";
-import { client } from "../../sanity/utils/sanity/client";
+import { client } from "@/utils/client";
 
 export const metadata: Metadata = {
   title: "Ivory Vista Properties | Homepage",

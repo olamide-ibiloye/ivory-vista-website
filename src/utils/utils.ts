@@ -1,5 +1,5 @@
 import { Inter, Playfair_Display } from "next/font/google";
-import { urlFor } from "../../sanity/utils/sanity/client";
+import { urlFor } from "./client";
 
 export const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
