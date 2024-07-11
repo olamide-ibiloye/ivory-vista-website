@@ -7,19 +7,13 @@ const projects = ["Project 1", "Project 2", "Project 3"];
 const MainProjects = () => {
   return (
     <section>
-      <MaxWidthWrapper>
+      {/* <MaxWidthWrapper>
         <div className="ivory-section flex min-h-[600px] flex-col gap-5">
           {projects.map((service: string, idx: number) => (
-            <StylishCard
-              key={idx}
-              title={service}
-              left={idx % 2 !== 0}
-              image={[]}
-              body={undefined}
-            />
+            <StylishCard key={idx} title={service} left={idx % 2 !== 0} />
           ))}
         </div>
-      </MaxWidthWrapper>
+      </MaxWidthWrapper> */}
     </section>
   );
 };
