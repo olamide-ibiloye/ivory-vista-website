@@ -43,7 +43,7 @@ const ContactUs = async () => {
 
         <Header title="Contact Us" classes="text-background" />
 
-        <p className="z-50 py-10 text-center text-background lg:w-[90%]">
+        <p className="z-10 py-10 text-center text-background lg:w-[90%]">
           Subscribe with email and loads of interesting news will be sent to you
           on a daily basis.
         </p>

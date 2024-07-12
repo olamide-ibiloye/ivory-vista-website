@@ -26,29 +26,32 @@ const StylishCard: React.FC<StylishCardProps> = ({
           className={`w-full bg-muted-foreground p-5 text-background dark:bg-foreground/90 md:w-[80%] md:p-0 ${left ? "flex flex-col items-end justify-end" : ""}`}
         >
           <div
-            className={`absolute ${left ? "left-0 top-10" : "bottom-10 right-0"} z-10 hidden h-[450px] w-[40%] md:block`}
+            className={`absolute ${left ? "left-0 top-10" : "bottom-10 right-0"} z-10 hidden h-[450px] w-[450px] md:block`}
           >
             <Image
               src={slides[0].image}
               alt={slides[0].alt_text}
               width={1000}
               height={1000}
-              className="h-full w-full rounded-lg"
+              quality={100}
+              className="h-full w-full rounded-lg object-cover"
             />
           </div>
 
-          <div className={`h-[350px] w-full md:hidden ${left ? "" : ""}`}>
+          <div
+            className={`h-[350px] min-h-[350px] w-full md:hidden ${left ? "" : ""}`}
+          >
             <Image
               src={slides[0].image}
               alt={slides[0].alt_text}
               width={1000}
               height={1000}
-              className="h-full w-full rounded-lg"
+              className="h-full w-full rounded-lg object-cover"
             />
           </div>
 
           <div
-            className={`flex h-full flex-col items-start justify-start py-5 md:min-h-[450px] md:w-[75%] md:justify-center md:p-10 lg:p-20`}
+            className={`flex h-full w-full flex-col items-start justify-start py-5 text-left md:min-h-[450px] md:w-[75%] md:justify-center md:p-10 lg:p-20`}
           >
             <h3
               className={`mb-5 w-full text-2xl font-medium md:text-4xl ${playfairDisplay.className}`}

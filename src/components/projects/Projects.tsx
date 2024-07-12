@@ -35,11 +35,13 @@ const Projects: React.FC<ProjectsProps> = ({ data }) => {
       <div
         className={`flex h-full w-full items-center justify-center gap-5 ${reverse ? "flex-col-reverse md:flex-row-reverse" : "flex-col md:flex-row"}`}
       >
-        <div className="w-full md:w-[50%]">
+        <div className="h-[300px] w-full md:w-[50%]">
           <Image
             src={image}
             alt=""
-            className="h-[300px] w-full rounded-lg object-cover"
+            width={1000}
+            height={1000}
+            className="h-full w-full rounded-lg object-cover"
           />
         </div>
 

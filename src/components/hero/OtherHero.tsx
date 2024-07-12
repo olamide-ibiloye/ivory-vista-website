@@ -1,23 +1,14 @@
-import about1 from "../../../public/About 1.jpg";
-import about2 from "../../../public/About 2.jpg";
-import about3 from "../../../public/About 3.jpg";
 import Image from "next/image";
 import dots from "../../../public/dots.png";
 import { getSlides, playfairDisplay } from "@/utils/utils";
 import { DataType } from "./MainHero";
 
 interface OtherHeroProps {
-  data?: DataType;
+  data: DataType;
 }
 
-const backUp = {
-  title: "About Us",
-  body: "Welcome to your source for leasing and managing beautiful rental homes Indonesia",
-  images: [about1, about2, about3],
-};
-
 const OtherHero: React.FC<OtherHeroProps> = ({ data }) => {
-  const { title, body, images } = (!!data && data) || backUp;
+  const { title, body, images } = data;
 
   const slides = getSlides(images);
 
@@ -42,33 +33,18 @@ const OtherHero: React.FC<OtherHeroProps> = ({ data }) => {
           <p className="py-8 md:max-w-[70%] 2xl:max-w-[50%]">{body}</p>
         </div>
 
-        {!!!data && (
-          <div className="flex h-[300px] items-center justify-center gap-5 lg:h-[500px] lg:justify-start">
-            {images.map((image, idx) => (
-              <Image
-                key={idx}
-                src={image}
-                alt={""}
-                className={`h-full w-[300px] rounded-lg object-cover ${idx % 2 !== 0 ? "mb-20" : ""}`}
-              />
-            ))}
-          </div>
-        )}
-
-        {!!data && (
-          <div className="flex h-[300px] items-center justify-center gap-5 lg:h-[500px] lg:justify-start">
-            {slides.map((slide, idx) => (
-              <Image
-                key={idx}
-                src={slide.image}
-                alt={slide.alt_text}
-                width={1000}
-                height={1000}
-                className={`h-full w-[300px] rounded-lg object-cover ${idx % 2 !== 0 ? "mb-20" : ""}`}
-              />
-            ))}
-          </div>
-        )}
+        <div className="flex h-[300px] items-center justify-center gap-5 lg:h-[500px] lg:justify-start">
+          {slides.map((slide, idx) => (
+            <Image
+              key={idx}
+              src={slide.image}
+              alt={slide.alt_text}
+              width={1000}
+              height={1000}
+              className={`h-full w-[300px] min-w-[300px] rounded-lg object-cover ${idx % 2 !== 0 ? "mb-20" : ""}`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

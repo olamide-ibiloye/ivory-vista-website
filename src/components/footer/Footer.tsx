@@ -41,7 +41,7 @@ const Footer = () => {
 
                 <div className="flex items-start justify-start gap-3 text-[14px] font-light">
                   <Phone />
-                  +33 415 65356 - 9
+                  +44 745 946 7863
                 </div>
 
                 <div className="flex items-start justify-start gap-3 text-[14px] font-light">
