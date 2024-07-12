@@ -4,6 +4,7 @@ import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import DataProvider from "@/providers/DataProvider";
 import { inter } from "@/utils/utils";
+import { Toaster } from "@/components/ui/toaster";
 
 export default function RootLayout({
   children,
@@ -26,6 +27,7 @@ export default function RootLayout({
               {children}
               <Footer />
             </main>
+            <Toaster />
           </DataProvider>
         </ThemeProvider>
       </body>

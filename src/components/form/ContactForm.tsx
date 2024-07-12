@@ -13,11 +13,15 @@ import {
   FormLabel,
   FormMessage,
 } from "../ui/form";
+import CircularProgress from "@mui/material/CircularProgress";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
+import { useToast } from "../ui/use-toast";
 
 const ContactForm = () => {
+  const { toast } = useToast();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -29,10 +33,41 @@ const ContactForm = () => {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log(values);
+  const isSubmitting = form.formState.isSubmitting;
 
-    form.reset();
+  const showToast = () => {
+    toast({
+      title: "Success",
+      description: "Enquiry has been sent successfully!",
+    });
+  };
+
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+
+      // Optionally, handle response data here if needed
+      const responseData = await response.json();
+      console.log("Form submission successful:", responseData);
+
+      // Notify user
+      showToast();
+
+      // Reset form fields
+      form.reset();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   };
 
   return (
@@ -81,8 +116,15 @@ const ContactForm = () => {
           />
         </div>
 
-        <Button type="submit" className="my-3 h-[40px] w-full">
-          Submit
+        <Button
+          type="submit"
+          disabled={isSubmitting}
+          className="my-3 flex h-[40px] w-full items-center justify-center gap-4"
+        >
+          {isSubmitting && (
+            <CircularProgress size={20} className="text-white" />
+          )}
+          {isSubmitting ? "Submitting" : "Submit"}
         </Button>
       </form>
     </Form>
