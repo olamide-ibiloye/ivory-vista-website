@@ -56,7 +56,7 @@ const Footer = () => {
                 <h4 className="font-semibold">QUICK LINKS</h4>
 
                 <FooterLink href="/" name="Home" />
-                <FooterLink href="/about" name="About" />
+                <FooterLink href="/about-us" name="About Us" />
                 <FooterLink href="our-services" name="Our Services" />
                 <FooterLink href="/projects" name="Projects" />
               </div>
