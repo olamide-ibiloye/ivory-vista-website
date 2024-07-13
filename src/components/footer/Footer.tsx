@@ -64,7 +64,7 @@ const Footer = () => {
               <div className="flex flex-col items-start justify-start gap-2">
                 <h4 className="font-semibold">LEGAL LINKS</h4>
                 <FooterLink href="" name="Terms & Conditions" />
-                <FooterLink href="" name="Policy" />
+                <FooterLink href="" name="Privacy Policy" />
               </div>
 
               <div className="flex flex-col items-start justify-start gap-2">
