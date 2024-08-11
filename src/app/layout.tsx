@@ -22,9 +22,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <DataProvider>
-            <main>
+            <main className="flex min-h-screen flex-col">
               <Navbar />
-              {children}
+              <div className="flex-1">{children}</div>
               <Footer />
             </main>
             <Toaster />
