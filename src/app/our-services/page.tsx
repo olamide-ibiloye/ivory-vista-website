@@ -16,8 +16,24 @@ const getContent = async () => {
   try {
     const CONTENT_QUERY = `
       *[_type == 'ourServices'][0] {
-        our_services,
-        hero_section
+        our_services {
+          "cards": cards[] {
+          ...,
+            "images": images[] {
+                            alt_text,
+                            image,
+                            "lqip": image.asset->metadata.lqip 
+                          }
+          }
+        },
+        hero_section {
+          ...,
+          "images": images[] {
+                      alt_text,
+                      image,
+                      "lqip": image.asset->metadata.lqip 
+                    }
+        }
       } `;
 
     return await client.fetch(CONTENT_QUERY);

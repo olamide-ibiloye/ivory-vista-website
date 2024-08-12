@@ -39,6 +39,8 @@ const OtherHero: React.FC<OtherHeroProps> = ({ data }) => {
               key={idx}
               src={slide.image}
               alt={slide.alt_text}
+              blurDataURL={slide.lqip}
+              placeholder="blur"
               width={1000}
               height={1000}
               className={`h-full w-[300px] min-w-[300px] rounded-lg object-cover ${idx % 2 !== 0 ? "mb-20" : ""}`}

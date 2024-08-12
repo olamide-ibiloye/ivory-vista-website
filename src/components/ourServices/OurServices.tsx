@@ -45,6 +45,8 @@ const OurServices: React.FC<OurServicesProps> = ({ data }) => {
               <Image
                 src={slides[0].image}
                 alt={slides[0].alt_text}
+                blurDataURL={slides[0].lqip}
+                placeholder="blur"
                 width={1000}
                 height={1000}
                 className="rounded-full"

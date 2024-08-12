@@ -11,7 +11,13 @@ const getContent = async () => {
   try {
     const CONTENT_QUERY = `
       *[_type == 'contactDetail'][0] {
-        contact_image
+        contact_image {
+          "images": images[] {
+            alt_text,
+            image,
+            "lqip": image.asset->metadata.lqip 
+          }
+        }
       }`;
 
     return await client.fetch(CONTENT_QUERY);
@@ -32,6 +38,8 @@ const ContactUs = async () => {
         <Image
           alt={slides[0].alt_text}
           src={slides[0].image}
+          blurDataURL={slides[0].lqip}
+          placeholder="blur"
           quality={100}
           fill
           sizes="100vw"

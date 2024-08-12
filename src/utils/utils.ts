@@ -9,8 +9,9 @@ export const playfairDisplay = Playfair_Display({
 export const inter = Inter({ subsets: ["latin"] });
 
 export const getSlides = (images: any[]) => {
-  return images.map(({ alt_text, image }) => ({
-    alt_text: alt_text,
+  return images.map(({ alt_text, image, lqip }) => ({
+    alt_text,
     image: urlFor(image).url(),
+    lqip,
   }));
 };

@@ -6,6 +6,9 @@ export const sectionImage = defineType({
   title: 'Section Image',
   fields: [
     defineField({type: 'string', name: 'alt_text'}),
-    defineField({type: 'image', name: 'image'}),
+    defineField({
+      type: 'image',
+      name: 'image',
+    }),
   ],
 })

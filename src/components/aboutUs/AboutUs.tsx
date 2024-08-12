@@ -29,6 +29,8 @@ const AboutUs: React.FC<AboutUsProps> = ({ data }) => {
               <Image
                 src={slides[0].image}
                 alt={slides[0].alt_text}
+                blurDataURL={slides[0].lqip}
+                placeholder="blur"
                 height={1000}
                 width={1000}
                 className="h-[512px] w-full rounded-lg object-cover"
@@ -56,6 +58,8 @@ const AboutUs: React.FC<AboutUsProps> = ({ data }) => {
                 <Image
                   src={slides[1].image}
                   alt={slides[1].alt_text}
+                  blurDataURL={slides[1].lqip}
+                  placeholder="blur"
                   height={1000}
                   width={1000}
                   className="h-[250px] w-full rounded-lg object-cover"
@@ -66,6 +70,8 @@ const AboutUs: React.FC<AboutUsProps> = ({ data }) => {
                 <Image
                   src={slides[2].image}
                   alt={slides[2].alt_text}
+                  blurDataURL={slides[2].lqip}
+                  placeholder="blur"
                   height={1000}
                   width={1000}
                   className="h-[250px] w-full rounded-lg object-cover"
@@ -78,6 +84,8 @@ const AboutUs: React.FC<AboutUsProps> = ({ data }) => {
                 <Image
                   src={slides[3].image}
                   alt={slides[3].alt_text}
+                  blurDataURL={slides[3].lqip}
+                  placeholder="blur"
                   height={1000}
                   width={1000}
                   className="h-[250px] w-full rounded-lg object-cover"
@@ -87,6 +95,8 @@ const AboutUs: React.FC<AboutUsProps> = ({ data }) => {
                 <Image
                   src={slides[4].image}
                   alt={slides[4].alt_text}
+                  blurDataURL={slides[4].lqip}
+                  placeholder="blur"
                   height={1000}
                   width={1000}
                   className="h-[250px] w-full rounded-lg object-cover"

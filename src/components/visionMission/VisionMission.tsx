@@ -1,9 +1,8 @@
 import React from "react";
 import Header from "../text/Header";
 import Image from "next/image";
-import vision from "../../../public/Vision.jpg";
 import MaxWidthWrapper from "../maxWidthWrapper/MaxWidthWrapper";
-import { playfairDisplay } from "@/utils/utils";
+import { getSlides, playfairDisplay } from "@/utils/utils";
 
 type Point = {
   title: string;
@@ -22,6 +21,8 @@ interface VisionMissionProps {
 
 const VisionMission: React.FC<VisionMissionProps> = ({ data }) => {
   const { title, services, images } = data;
+
+  const slides = getSlides(images);
 
   const ServiceCard = ({ title, body }: { title: string; body: string }) => {
     return (
@@ -47,8 +48,12 @@ const VisionMission: React.FC<VisionMissionProps> = ({ data }) => {
             <div className="hidden max-md:block">
               <div className="h-[250px] w-[250px] rounded-full border-[5px] border-primary">
                 <Image
-                  src={vision}
-                  alt=""
+                  src={slides[0].image}
+                  alt={slides[0].alt_text}
+                  blurDataURL={slides[0].lqip}
+                  placeholder="blur"
+                  width={1000}
+                  height={1000}
                   className="h-full w-full rounded-full object-cover"
                 />
               </div>
@@ -63,8 +68,12 @@ const VisionMission: React.FC<VisionMissionProps> = ({ data }) => {
             <div className="hidden items-center justify-center md:flex md:w-[50%]">
               <div className="h-[400px] w-[400px] rounded-full border-[20px] border-primary">
                 <Image
-                  src={vision}
-                  alt=""
+                  src={slides[0].image}
+                  alt={slides[0].alt_text}
+                  blurDataURL={slides[0].lqip}
+                  placeholder="blur"
+                  width={1000}
+                  height={1000}
                   className="h-full w-full rounded-full object-cover"
                 />
               </div>

@@ -17,10 +17,23 @@ const getContent = async () => {
   try {
     const CONTENT_QUERY = `
       *[_type == 'aboutUs'][0] {
-        hero_section,
-        who_we_are,
-        why_choose_us,
-        our_vision_mission
+        ...,
+        hero_section {
+          ...,
+          "images": images[] {
+                      alt_text,
+                      image,
+                      "lqip": image.asset->metadata.lqip 
+                    }
+        },
+        our_vision_mission {
+          ...,
+          "images": images[] {
+                            alt_text,
+                            image,
+                            "lqip": image.asset->metadata.lqip 
+                          }
+        }
       }`;
 
     return await client.fetch(CONTENT_QUERY);

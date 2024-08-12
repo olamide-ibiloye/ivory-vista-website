@@ -16,7 +16,14 @@ const getContent = async () => {
   try {
     const CONTENT_QUERY = `
       *[_type == 'projects'][0] {
-      hero_section
+      hero_section {
+        ...,
+        "images": images[] {
+                    alt_text,
+                    image,
+                    "lqip": image.asset->metadata.lqip 
+                  }
+      }
     } `;
 
     return await client.fetch(CONTENT_QUERY);

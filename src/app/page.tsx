@@ -18,10 +18,31 @@ const getContent = async () => {
     const CONTENT_QUERY = `
       {
         "home": *[_type == 'home'][0] {
-          hero_section,
-          about_us_section,
-          our_services_section,
-          projects_section  
+          ...,
+          hero_section {
+            ...,
+            "images": images[] {
+                        alt_text,
+                        image,
+                        "lqip": image.asset->metadata.lqip 
+                      }
+          },
+          about_us_section {
+            ...,
+            "images": images[] {
+              alt_text,
+              image,
+              "lqip": image.asset->metadata.lqip 
+            }
+          },
+          our_services_section {
+            ...,
+            "images": images[] {
+                alt_text,
+                image,
+                "lqip": image.asset->metadata.lqip 
+              }
+          }
         },
         "services": *[_type == 'ourServices'][0] {
           our_services

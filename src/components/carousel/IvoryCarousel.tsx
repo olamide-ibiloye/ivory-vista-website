@@ -32,6 +32,8 @@ const IvoryCarousel = ({ slides }: { slides: any[] }) => {
             <Image
               src={slide.image}
               alt={`slide-${index + 1}`}
+              blurDataURL={slide.lqip}
+              placeholder="blur"
               width={1000}
               height={1000}
               priority

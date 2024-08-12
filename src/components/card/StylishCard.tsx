@@ -31,6 +31,8 @@ const StylishCard: React.FC<StylishCardProps> = ({
             <Image
               src={slides[0].image}
               alt={slides[0].alt_text}
+              blurDataURL={slides[0].lqip}
+              placeholder="blur"
               width={1000}
               height={1000}
               quality={100}
