@@ -24,4 +24,5 @@ export const navLinks = [
 export enum links {
   FACEBOOK = "https://www.facebook.com/profile.php?id=61562952867433",
   INSTAGRAM = "https://www.instagram.com/ivoryvista?igsh=c3BxenNkZG9jeGZx&utm_source=qr",
+  LINKEDIN = "https://www.linkedin.com/company/ivory-vista/",
 }

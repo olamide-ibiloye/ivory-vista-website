@@ -85,7 +85,7 @@ const Footer = () => {
                 <h4 className="font-semibold">SOCIAL MEDIA</h4>
                 <FooterLink href={links.FACEBOOK} name="Facebook" useNewTab />
                 <FooterLink href={links.INSTAGRAM} name="Instagram" useNewTab />
-                {/* <FooterLink href="" name="LinkedIn" /> */}
+                <FooterLink href={links.LINKEDIN} name="LinkedIn" useNewTab />
               </div>
             </div>
           </div>
