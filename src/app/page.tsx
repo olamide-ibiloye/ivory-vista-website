@@ -66,7 +66,7 @@ const Home = async () => {
 
       <OurServices data={our_services_section} />
 
-      <Projects data={projects_section} />
+      {/* <Projects data={projects_section} /> */}
 
       <ContactUs />
     </main>
