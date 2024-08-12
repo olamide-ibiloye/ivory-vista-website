@@ -5,11 +5,25 @@ import Link from "next/link";
 import { Email, LocationOn, Phone } from "@mui/icons-material";
 import footerBG from "../../../public/footerBG.png";
 import { playfairDisplay } from "@/utils/utils";
+import { links } from "../constants";
 
 const Footer = () => {
-  const FooterLink = ({ href, name }: { href: string; name: string }) => (
-    <Link href={href} className="text-[14px] font-light">
-      {name}
+  const FooterLink = ({
+    href,
+    name,
+    useNewTab = false,
+  }: {
+    href: string;
+    name: string;
+    useNewTab?: boolean;
+  }) => (
+    <Link
+      href={href}
+      className="text-[14px] font-light"
+      passHref
+      legacyBehavior
+    >
+      <a target={useNewTab ? "_blank" : "_self"}>{name}</a>
     </Link>
   );
 
@@ -69,9 +83,9 @@ const Footer = () => {
 
               <div className="flex flex-col items-start justify-start gap-2">
                 <h4 className="font-semibold">SOCIAL MEDIA</h4>
-                <FooterLink href="" name="Facebook" />
-                <FooterLink href="" name="Instagram" />
-                <FooterLink href="" name="LinkedIn" />
+                <FooterLink href={links.FACEBOOK} name="Facebook" useNewTab />
+                <FooterLink href={links.INSTAGRAM} name="Instagram" useNewTab />
+                {/* <FooterLink href="" name="LinkedIn" /> */}
               </div>
             </div>
           </div>
